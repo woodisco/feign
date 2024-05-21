@@ -14,9 +14,7 @@ public class DemoService {
     private final DemoFeignClient demoFeignClient;
 
     public String get() {
-        ResponseEntity<BaseResponseInfo> response = demoFeignClient.callGet("CustomHeader",
-                "CustomName",
-                1L);
+        ResponseEntity<BaseResponseInfo> response = demoFeignClient.callGet("CustomHeader", "CustomName", 1L);
         System.out.println("Name : " + response.getBody().getName());
         System.out.println("Age : " + response.getBody().getAge());
         System.out.println("Header : " + response.getBody().getHeader());
@@ -28,16 +26,15 @@ public class DemoService {
                 .name("customName")
                 .age(1L)
                 .build();
-        ResponseEntity<BaseResponseInfo> response = demoFeignClient.callPost("CustomHeader",
-                requestBody);
+        ResponseEntity<BaseResponseInfo> response = demoFeignClient.callPost("CustomHeader", requestBody);
         System.out.println("Name : " + response.getBody().getName());
         System.out.println("Age : " + response.getBody().getAge());
         System.out.println("Header : " + response.getBody().getHeader());
         return "post";
     }
 
-    public String errorDecoder() {
-        demoFeignClient.callErrorDecoder();
-        return "errorDecoder";
-    }
+//    public String errorDecoder() {
+//        demoFeignClient.callErrorDecoder();
+//        return "errorDecoder";
+//    }
 }

@@ -22,15 +22,10 @@ repositories {
 }
 
 ext {
-	/**
-	 * Spring Boot and springCloudVersion must be compatible.
-	 * 2.6.x, 2.7.x (Starting with 2021.0.3) = 2021.0.x
-	 * ref : https://spring.io/projects/spring-cloud
-	 */
 	// Feign
-	set('springCloudVersion', '2022.0.0')
+	set('springCloudVersion', '2023.0.1')
 
-	set('commonsLangVersion', '3.12.0')
+	set('commonsLangVersion', '3.14.0')
 }
 
 dependencyManagement {
@@ -48,6 +43,9 @@ dependencies {
 
 	// Feign
 	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+	// for `StringUtils`
+	implementation "org.apache.commons:commons-lang3:${commonsLangVersion}"
 }
 
 tasks.named('test') {

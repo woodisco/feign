@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class BaseResponseInfo {
+    private String header;
     private String name;
     private Long age;
-    private String header;
 }

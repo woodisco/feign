@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.*;
         configuration = DemoFeignConfig.class)
 public interface DemoFeignClient {
     @GetMapping("/get") // "${feign.url.prefix}/get"으로 요청
-    ResponseEntity<BaseResponseInfo> callGet(@RequestHeader("customHeader") String customHeader,
+    ResponseEntity<BaseResponseInfo> callGet(@RequestHeader("CustomHeaderName") String customHeader,
                                              @RequestParam("name") String name,
                                              @RequestParam("age") Long age);
 
     @PostMapping("/post") // "${feign.url.prefix}/post"로 요청
-    ResponseEntity<BaseResponseInfo> callPost(@RequestHeader("customHeader") String customHeader,
+    ResponseEntity<BaseResponseInfo> callPost(@RequestHeader("CustomHeaderName") String customHeader,
                                               @RequestBody BaseRequestInfo baseRequestInfo);
 
-    @GetMapping("/errorDecoder")
-    ResponseEntity<BaseResponseInfo> callErrorDecoder();
+//    @GetMapping("/errorDecoder")
+//    ResponseEntity<BaseResponseInfo> callErrorDecoder();
 }

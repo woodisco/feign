@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class DemoFeignConfig {
-//    @Bean
-//    public DemoFeignInterceptor feignInterceptor() {
-//        return DemoFeignInterceptor.of();
-//    }
+    @Bean
+    public DemoFeignInterceptor feignInterceptor() {
+        return DemoFeignInterceptor.of(); // (staticName = "of")
+    }
 //
 //    @Bean
 //    public DemoFeignErrorDecoder DemoErrorDecoder() {
