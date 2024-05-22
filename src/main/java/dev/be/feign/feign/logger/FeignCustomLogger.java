@@ -91,6 +91,7 @@ public class FeignCustomLogger extends Logger {
                 if (logLevel.ordinal() >= Level.HEADERS.ordinal() && bodyLength > 0) {
                     log(configKey, "%s", decodeOrDefault(bodyData, UTF_8, "Binary data"));
                 }
+                // elapsedTime이 지정한 시간보다 오래 걸릴 경우, 로그 출력
                 if (elapsedTime > DEFAULT_SLOW_API_TIME) {
                     log(configKey, "[%s] elapsedTime : %s", SLOW_API_NOTICE, elapsedTime);
                 }

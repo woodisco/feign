@@ -3,7 +3,6 @@ package dev.be.feign.controller;
 import dev.be.feign.service.DemoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -21,8 +20,8 @@ public class DemoController {
         return demoService.post();
     }
 
-//    @GetMapping("/error")
-//    public String errorDecoderController() {
-//        return demoService.errorDecoder();
-//    }
+    @GetMapping("/error")
+    public String errorDecoderController() {
+        return demoService.errorDecoder();
+    }
 }
